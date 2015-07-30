@@ -190,4 +190,4 @@ show, print the error for more information
 
 ```
 ### 4.3 IPN reward
-Please visit our ad site to study IPN mechanism 
+Please visit our ad site to study IPN mechanism - [IPN](IPN.md)
