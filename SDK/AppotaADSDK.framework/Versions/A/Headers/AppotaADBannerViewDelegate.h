@@ -19,10 +19,11 @@
 
 #pragma mark Ad Request Lifecycle Notifications
 
+
 /// Called when an ad request loaded an ad. This is a good opportunity to add this view to the
 /// hierarchy if it has not been added yet. If the ad was received as a part of the server-side auto
 /// refreshing, you can examine the hasAutoRefreshed property of the view.
-- (void)adViewDidReceiveAd:(AppotaADBannerView *)view;
+- (void)adViewDidReceiveAd:(AppotaADBannerView *) view;
 
 /// Called when an ad request failed. Normally this is because no network connection was available
 /// or no ads were available (i.e. no fill). If the error was received as a part of the server-side

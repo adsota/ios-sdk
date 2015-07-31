@@ -13,11 +13,10 @@
  */
 typedef enum
 {
-    AppotaAdsBannerTypeList,
-    AppotaAdsBannerTypeSide,
-    AppotaAdsBannerTypeScreen,
-    AppotaAdsBannerTypeRandom,
-} AppotaAdsBannerType;
+    AppotaADTypeView,
+    AppotaADTypeInterstitial,
+    AppotaADTypeOfferWall,
+} AppotaADType;
 
 typedef void (^AppotaADStringBlock)(NSString *xmlString);
 typedef void (^AppotaADArrayBlock)(NSArray *list);

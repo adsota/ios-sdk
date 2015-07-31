@@ -26,7 +26,7 @@
 
 /// Required value passed in with initWithAdUnitID:.
 @property(nonatomic, readonly, copy) NSString *adUnitID;
-@property (readwrite) AppotaAdsBannerType adType;
+@property (readwrite) AppotaADType adType;
 
 /// Optional delegate object that receives state change notifications from this GADInterstitalAd.
 /// Remember to nil this property before deallocating the delegate.

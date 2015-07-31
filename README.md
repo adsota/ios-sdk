@@ -35,7 +35,7 @@ This is version 1.01 of AppotaADSDK for iOS
 	```
 	[AppotaADSDK becomeActive];
 	```
-
+- `AppotaADRequest` class has `isDevelopmentMode` property to config state of current application is in development (testing or production).
 ## 2. Banner
 Now that you have a project with the SDK referenced, let's put banner ads into it. There are 2 ways to add banner by interface builder or programmatically. 
 - Add `AppotaADBannerView` to interface builder and add constraint
@@ -191,3 +191,64 @@ show, print the error for more information
 ```
 ### 4.3 IPN reward
 Please visit our ad site to study IPN mechanism - [IPN](IPN.md)
+
+## 5. Native ads
+Our SDK also support native ads. Native ADS api will return ads data and developer can use custom UI to display the data.
+### 5.1 AppotaADNative class
+- Call `loadRequest:withCompletionBlock:withErrorBlock:(AppotaADErrorBlock) errorBlock;
+
+```
+    AppotaADRequest *request = [AppotaADRequest request];
+    request.adType = AppotaADTypeInterstitial;
+    request.adUnitID = @"44";
+    [AppotaADNative loadRequest:request
+            withCompletionBlock:^(NSArray *list) {
+                if (list.count > 0) {
+                    AppotaADNativeInterstitialObject *obj = list[0];
+                    NSLog(@"%@",[obj getImageURL]);
+                }
+            } withErrorBlock:^(NSError *error) {
+                
+    }];
+      
+```
+
+- Set `adType`, `adUnitID` to `request`
+
+This function will return list of `AppotaADNativeObject` object
+
+- Call `click:withRootViewController:` when user click on an item in your custom view
+
+### 5.2 AppotaADNativeObject class
+- `ADNativeViewObject`, `ADNativeInterstitialObject`, `ADNativeOfferWallObject` 's inhertiged from `ADNativeObject` each will represent an adobject use to display on your custom UI ad
+
+- `ADNativeObject`
+
+```
+	// Get adID
+	- (NSString*) getID;
+	
+	- (NSString*) getName;
+	
+	- (NSString*) getImageURL;
+	
+	- (NSString*) getIconURL;
+	
+	// Return display type icon or screen
+	- (NSString*) getType;
+	
+	- (NSString*) getAction;
+	
+	- (NSString*) getDescription ;
+```
+
+- `ADNativeViewObject`
+
+- `ADNativeInterstitialObject`
+
+- `ADNativeOfferWallObject`
+
+```
+	- (NSString*) getPoint;
+	- (NSString*) getCurrency;	
+```

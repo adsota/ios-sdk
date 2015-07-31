@@ -14,6 +14,7 @@
 #import "AppotaADRequestError.h"
 #import "AppotaADInterstitial.h"
 #import "AppotaADOfferWall.h"
+#import "AppotaADNative.h"
 
 
 @interface AppotaADSDK : NSObject
