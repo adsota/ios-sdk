@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AppotaADConstants.h"
+#import "AppotaADNativeObject.h"
+#import "AppotaADNativeViewObject.h"
+#import "AppotaADNativeInterstitialObject.h"
+#import "AppotaADNativeOfferWallObject.h"
 
 @class AppotaADRequest;
 @class AppotaADNativeObject;
