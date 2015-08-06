@@ -2,6 +2,23 @@ AppotaADSDK for iOS
 ====
 This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will be create and manage on [https://ads.appota.com](https://ads.appota.com)
 
+## Overview
+1. [Configuration](#1-configuration)
+2. [Banner](#2-banner)
+	- [Setup ad banner](#21-setup-ad-banner)
+	- [Delegate](#22-delegate)
+	
+3. [Interstitial Ad](#3-interstitial-ad)
+	- [Setup interstitial banner](#31-setup-interstitial-banner)
+	- [Delegate](#32-delegate)
+4. [Offerwall Ad](#4-offerwall-ad)
+	- [Setup](#41-setup-offerwall-ad)
+	- [Delegate](#42-delegate)
+	- [How user get reward](#43-how-user-get-reward)
+5. [Native ads](#5-native-ads)
+ 	- [AppotaADNative class](#51-appotaadnative-class)
+ 	- [AppotaADNativeObject class](#52-appotaadnativeobject-class)
+
 ## 1. Configuration
 - Add `AppotaADSDK.framework` and `AppotaADBundle.bundle` to your project
 - Add other frameworks that the SDK requires
@@ -36,6 +53,7 @@ This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will 
 	[AppotaADSDK becomeActive];
 	```
 - `AppotaADRequest` class has `isDevelopmentMode` property to config state of current application is in development (testing or production).
+
 ## 2. Banner
 Now that you have a project with the SDK referenced, let's put banner ads into it. There are 2 ways to add banner by interface builder or programmatically. 
 - Add `AppotaADBannerView` to interface builder and add constraint
