@@ -6,8 +6,7 @@ This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will 
 1. [Configuration](#1-configuration)
 2. [Banner](#2-banner)
 	- [Setup ad banner](#21-setup-ad-banner)
-	- [Delegate](#22-delegate)
-	
+	- [Delegate](#22-delegate)	
 3. [Interstitial Ad](#3-interstitial-ad)
 	- [Setup interstitial banner](#31-setup-interstitial-banner)
 	- [Delegate](#32-delegate)
