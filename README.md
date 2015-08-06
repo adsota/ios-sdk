@@ -1,6 +1,6 @@
 AppotaADSDK for iOS
 ====
-This is version 1.01 of AppotaADSDK for iOS
+This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will be create and manage on [https://ads.appota.com](https://ads.appota.com)
 
 ## 1. Configuration
 - Add `AppotaADSDK.framework` and `AppotaADBundle.bundle` to your project
@@ -189,8 +189,21 @@ show, print the error for more information
 - (void)offerWallDidDismissScreen:(AppotaADOfferWall *)ad;
 
 ```
-### 4.3 IPN reward
-Please visit our ad site to study IPN mechanism - [IPN](IPN.md)
+### 4.3 How user get reward
+
+- Reward machenism will follow this char
+![](ads_reward.png)
+
+Add your information which need to reward user (`userID`, game info, ...) to `state` and `target` property in `AppotaADRequest` object, this information will be passed to your server after user finish their quest in offerwall
+
+```
+AppotaADRequest *request = [AppotaADRequest request];
+request.state = @"game_1";
+request.target = @"user1";
+
+```
+
+- Set your server address to reward user on [http://ads.appota.com](http://ads.appota.com). Here is a sample of simple server [IPN](ipn.php)
 
 ## 5. Native ads
 Our SDK also support native ads. Native ADS api will return ads data and developer can use custom UI to display the data.
