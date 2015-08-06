@@ -61,13 +61,13 @@
 @property(nonatomic, weak) IBOutlet UIViewController *rootViewController;
 
 /// Presents the interstitial ad which takes over the entire screen until the user dismisses it.
-/// This has no effect unless isReady returns YES and/or the delegate's interstitialDidReceiveAd:
+/// This has no effect unless isReady returns YES and/or the delegate's appotaInterstitialDidReceiveAd:
 /// has been received.
 ///
 /// Set rootViewController to the current view controller at the time this method is called. If your
 /// application does not use view controllers pass in nil and your views will be removed from the
 /// window to show the interstitial and restored when done. After the interstitial has been removed,
-/// the delegate's interstitialDidDismissScreen: will be called.
+/// the delegate's appotaInterstitialDidDismissScreen: will be called.
 //- (void)presentFromRootViewController:(UIViewController *)rootViewController;
 
 @end

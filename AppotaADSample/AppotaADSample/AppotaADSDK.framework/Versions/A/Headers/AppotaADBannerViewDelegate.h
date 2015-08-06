@@ -23,12 +23,12 @@
 /// Called when an ad request loaded an ad. This is a good opportunity to add this view to the
 /// hierarchy if it has not been added yet. If the ad was received as a part of the server-side auto
 /// refreshing, you can examine the hasAutoRefreshed property of the view.
-- (void)adViewDidReceiveAd:(AppotaADBannerView *) view;
+- (void)appotaAdViewDidReceiveAd:(AppotaADBannerView *) view;
 
 /// Called when an ad request failed. Normally this is because no network connection was available
 /// or no ads were available (i.e. no fill). If the error was received as a part of the server-side
 /// auto refreshing, you can examine the hasAutoRefreshed property of the view.
-- (void)adView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)appotaAdView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error;
 
 #pragma mark Click-Time Lifecycle Notifications
 
@@ -41,6 +41,6 @@
 /// applicationWillResignActive: of your UIViewController
 /// (UIApplicationWillResignActiveNotification). Immediately after that adViewWillLeaveApplication:
 /// is called.
-- (void)adViewDidClick:(AppotaADBannerView *)adView;
+- (void)appotaAdViewDidClick:(AppotaADBannerView *)adView;
 
 @end

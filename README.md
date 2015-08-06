@@ -282,3 +282,6 @@ This function will return list of `AppotaADNativeObject` object
 	- (NSString*) getPoint;
 	- (NSString*) getCurrency;	
 ```
+
+## FAQ
+1. Delegate is not called 

@@ -20,18 +20,18 @@
 
 /// Called when an interstitial ad request succeeded. Show it at the next transition point in your
 /// application such as when transitioning between view controllers.
-- (void)interstitialDidReceiveAd:(AppotaADInterstitial *)ad;
+- (void)appotaInterstitialDidReceiveAd:(AppotaADInterstitial *)ad;
 
 /// Called when an interstitial ad request completed without an interstitial to
 /// show. This is common since interstitials are shown sparingly to users.
-- (void)interstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)appotaInterstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
 
 #pragma mark Display-Time Lifecycle Notifications
 
 // Ad did click
-- (void)interstitialDidClick:(AppotaADInterstitial *)ad;
+- (void)appotaInterstitialDidClick:(AppotaADInterstitial *)ad;
 
 /// Called just after dismissing an interstitial and it has animated off the screen.
-- (void)interstitialDidDismissScreen:(AppotaADInterstitial *)ad;
+- (void)appotaInterstitialDidDismissScreen:(AppotaADInterstitial *)ad;
 
 @end

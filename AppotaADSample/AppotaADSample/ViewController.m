@@ -11,6 +11,8 @@
 
 @interface ViewController () <AppotaADBannerViewDelegate, AppotaADInterstitialDelegate, AppotaADOfferWallDelegate>
 {
+    AppotaADOfferWall *offerWall;
+    AppotaADInterstitial* interstitial;
 }
 
 @end
@@ -20,15 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self setupBannerView];
+//    [self setupBannerView];
     // Cannot show interstitial and offerwall all at once
-    [self setupInterstitital];
-//    [self setupOfferWall];
+//    [self setupInterstitital];
+    [self setupOfferWall];
 }
 
 - (void) setupBannerView {
     AppotaADBannerView* bannerView = [[AppotaADBannerView alloc] initWithAdSize:APPOTA_SMART_BANNER_SIZE origin:CGPointMake(0, 0)];
-    bannerView.adUnitID = @"43";
+    bannerView.adUnitID = @"71";
     AppotaADRequest *request = [AppotaADRequest request];
     request.state = @"state";
     request.target = @"target";
@@ -39,13 +41,13 @@
 }
 
 - (void) setupInterstitital {
-    AppotaADInterstitial* interstitial = [[AppotaADInterstitial alloc] initWithAdUnitID:@"44" withRootViewController:self];
+    interstitial = [[AppotaADInterstitial alloc] initWithAdUnitID:@"72" withRootViewController:self];
     interstitial.delegate = self;
     [interstitial loadRequest:[AppotaADRequest request]];
 }
 
 - (void) setupOfferWall  {
-    AppotaADOfferWall *offerWall = [[AppotaADOfferWall alloc] initWithAdUnitID:@"45" withRootViewController:self];
+    offerWall = [[AppotaADOfferWall alloc] initWithAdUnitID:@"73" withRootViewController:self];
     offerWall.delegate = self;
     AppotaADRequest *request = [AppotaADRequest request];
     request.state = @"TestState";
@@ -61,50 +63,50 @@
 #pragma mark - Appota AD delegate
 
 # pragma mark Banner
-- (void) adViewDidReceiveAd:(AppotaADBannerView *)view {
+- (void) appotaAdViewDidReceiveAd:(AppotaADBannerView *)view {
     
 }
 
-- (void) adView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error {
+- (void) appotaAdView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error {
     
 }
 
-- (void) adViewDidClick:(AppotaADBannerView *)adView {
+- (void) appotaAdViewDidClick:(AppotaADBannerView *)adView {
     
 }
 
 #pragma mark Interstitial
-- (void) interstitialDidReceiveAd:(AppotaADInterstitial *)ad {
+- (void) appotaInterstitialDidReceiveAd:(AppotaADInterstitial *)ad {
     
 }
 
-- (void) interstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error {
+- (void) appotaInterstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error {
     // Fail interstitial then show offerwall
     [self setupOfferWall];
 }
 
-- (void) interstitialDidClick:(AppotaADInterstitial *)ad {
+- (void) appotaInterstitialDidClick:(AppotaADInterstitial *)ad {
     
 }
 
-- (void) interstitialDidDismissScreen:(AppotaADInterstitial *)ad {
+- (void) appotaInterstitialDidDismissScreen:(AppotaADInterstitial *)ad {
     
 }
 
 #pragma mark Offerwall
-- (void) offerWallDidReceiveAd:(AppotaADOfferWall *)ad {
+- (void) appotaOfferWallDidReceiveAd:(AppotaADOfferWall *)ad {
     
 }
 
-- (void) offerWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error {
+- (void) appotaOfferWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error {
     
 }
 
-- (void) offerWallDidClick:(AppotaADOfferWall *)ad {
+- (void) appotaOfferWallDidClick:(AppotaADOfferWall *)ad {
     
 }
 
-- (void) offerWallDidDismissScreen:(AppotaADOfferWall *)ad {
+- (void) appotaOfferWallDidDismissScreen:(AppotaADOfferWall *)ad {
     
 }
 @end
