@@ -80,23 +80,23 @@ Use `adUnitID` from ad CMS to make ad request, pass any value `state` to send to
 ### 2.2 Delegate
 There are 2 delegate call :
 
-- `adViewDidReceiveAd:` called when delegate received ad and will display it
+- `appotaAdViewDidReceiveAd:` called when delegate received ad and will display it
 
 ```
-- (void) adViewDidReceiveAd:(AppotaADBannerView *)view;
+- (void) appotaAdViewDidReceiveAd:(AppotaADBannerView *)view;
 
 ```
 
-- `adView:didFailToReceiveAdWithError:` called when fail to receive ad, print the error information to get the reason
+- `appotaAdView:didFailToReceiveAdWithError:` called when fail to receive ad, print the error information to get the reason
 
 ```
-- (void) adView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error
+- (void) appotaAdView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error
 ```
 
-- `adViewDidClick:` called when user did click on banner
+- `appotaAdViewDidClick:` called when user did click on banner
 
 ```
-- (void) adViewDidClick:(AppotaADBannerView *)adView;
+- (void) appotaAdViewDidClick:(AppotaADBannerView *)adView;
 ```
 
 ## 3. Interstitial Ad
@@ -126,7 +126,7 @@ request.state = @"YOUR_STATE";
 
 ```
 
-- (void)interstitialDidReceiveAd:(AppotaADInterstitial *)ad;
+- (void)appotaInterstitialDidReceiveAd:(AppotaADInterstitial *)ad;
 
 ```
 
@@ -134,7 +134,7 @@ request.state = @"YOUR_STATE";
 show, print the error for more information
 
 ```
-- (void)interstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)appotaInterstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
 
 ```
 
@@ -142,14 +142,14 @@ show, print the error for more information
 - Called when ad did click
 
 ```
-- (void)interstitialDidClick:(AppotaADInterstitial *)ad;
+- (void)appotaInterstitialDidClick:(AppotaADInterstitial *)ad;
 
 ```
 
 - Called just after dismissing an interstitial and it has animated off the screen.
 
 ```
-- (void)interstitialDidDismissScreen:(AppotaADInterstitial *)ad;
+- (void)appotaInterstitialDidDismissScreen:(AppotaADInterstitial *)ad;
 
 ```
 
@@ -180,7 +180,7 @@ request.state = @"YOUR_STATE";
 
 ```
 
-- (void)offerWallDidReceiveAd:(AppotaADOfferWall *)ad;
+- (void)appotaOfferWallDidReceiveAd:(AppotaADOfferWall *)ad;
 
 ```
 
@@ -188,7 +188,7 @@ request.state = @"YOUR_STATE";
 show, print the error for more information
 
 ```
-- (void)offerWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)appotaOfferWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
 
 ```
 
@@ -196,14 +196,14 @@ show, print the error for more information
 - Called when ad did click
 
 ```
-- (void)offerWallDidClick:(AppotaADOfferWall *)ad;
+- (void)appotaOfferWallDidClick:(AppotaADOfferWall *)ad;
 
 ```
 
 - Called just after dismissing an offerwall and it has animated off the screen.
 
 ```
-- (void)offerWallDidDismissScreen:(AppotaADOfferWall *)ad;
+- (void)appotaOfferWallDidDismissScreen:(AppotaADOfferWall *)ad;
 
 ```
 ### 4.3 How user get reward
@@ -284,4 +284,4 @@ This function will return list of `AppotaADNativeObject` object
 ```
 
 ## FAQ
-1. Delegate is not called 
+1. If `delegate` is not called please check if you set `delegate` for your ad. If you did set `delegate` please check if ad has been saved (if it's been released its delegate will not be called)
