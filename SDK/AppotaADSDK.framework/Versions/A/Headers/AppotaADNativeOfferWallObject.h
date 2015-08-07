@@ -10,7 +10,7 @@
 
 @interface AppotaADNativeOfferWallObject : AppotaADNativeObject
 
-- (NSString*) getPoint;
+- (CGFloat) getPoint;
 
 - (NSString*) getCurrency;
 
