@@ -34,4 +34,5 @@
 /// Called just after dismissing an interstitial and it has animated off the screen.
 - (void)appotaOfferWallDidDismissScreen:(AppotaADOfferWall *)ad;
 
+- (void) appotaOfferWallDidInstall:(NSArray*) listOffer;
 @end

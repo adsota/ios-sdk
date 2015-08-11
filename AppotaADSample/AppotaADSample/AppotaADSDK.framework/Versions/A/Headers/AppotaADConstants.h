@@ -30,7 +30,7 @@ typedef void (^AppotaADErrorBlock) (NSError *error);
 extern CGSize const APPOTA_BANNER_SIZE;
 extern CGFloat const APPOTA_BANNER_SIZE_HEIGHT;
 #define APPOTA_SMART_BANNER_SIZE getSmartBannerSize()
-//#define APPOTA_IS_SANDBOX 1
+#define APPOTA_IS_SANDBOX 1
 //#define APPOTA_ADS_IS_DEBUG_DEVICE 1
 
 //#define APPOTA_ADS_IS_DEBUG 1
