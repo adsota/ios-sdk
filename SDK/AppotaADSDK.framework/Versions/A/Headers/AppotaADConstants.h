@@ -26,7 +26,6 @@ typedef void (^AppotaADBOOLBlock)(BOOL b);
 typedef void (^AppotaADObjectBlock)(id object);
 typedef void (^AppotaADErrorBlock) (NSError *error);
 
-
 // Sizing constants.
 extern CGSize const APPOTA_BANNER_SIZE;
 extern CGFloat const APPOTA_BANNER_SIZE_HEIGHT;
