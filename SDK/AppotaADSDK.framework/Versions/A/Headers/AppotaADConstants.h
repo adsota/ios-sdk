@@ -16,6 +16,7 @@ typedef enum
     AppotaADTypeView,
     AppotaADTypeInterstitial,
     AppotaADTypeOfferWall,
+    AppotaADTypeNone,
 } AppotaADType;
 
 typedef void (^AppotaADStringBlock)(NSString *xmlString);
