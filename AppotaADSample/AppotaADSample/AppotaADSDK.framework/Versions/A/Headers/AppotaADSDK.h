@@ -24,13 +24,4 @@
  */
 + (void) init;
 
-/**
- *  Call in applicationDidBecomeActive:
- */
-+ (void) becomeActive;
-
-/**
- *  Call in applicationWillResignActive:
- */
-+ (void) resignActive;
 @end
