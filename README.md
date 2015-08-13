@@ -39,18 +39,6 @@ This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will 
 	[AppotaADSDK init];
 	```
 	
-	- in `applicationWillResignActive:`
-		
-	```
-	[AppotaADSDK resignActive];
-
-	```
-	
-	- in `applicationDidBecomeActive:`
-	
-	```
-	[AppotaADSDK becomeActive];
-	```
 - `AppotaADRequest` class has `isDevelopmentMode` property to config state of current application is in development (testing or production).
 
 ## 2. Banner
