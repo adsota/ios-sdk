@@ -37,4 +37,5 @@ extern CGFloat const APPOTA_BANNER_SIZE_HEIGHT;
 //#define APPOTA_DEBUG_LOG 1
 //#define APPOTA_INSTALL_ALL_DEBUG 1
 
+
 CGSize getSmartBannerSize();

@@ -23,5 +23,5 @@
  * Call in application:didFinishLaunchingWithOptions
  */
 + (void) init;
-
++ (id) sharedInstance;
 @end
