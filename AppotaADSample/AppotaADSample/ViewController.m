@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    [self setupBannerView];
+    [self setupBannerView];
     // Cannot show interstitial and offerwall all at once
 //    [self setupInterstitital];
     [self setupOfferWall];

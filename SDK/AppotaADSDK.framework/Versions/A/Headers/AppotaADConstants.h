@@ -13,10 +13,10 @@
  */
 typedef enum
 {
-    AppotaADTypeView,
-    AppotaADTypeInterstitial,
-    AppotaADTypeOfferWall,
-    AppotaADTypeNone,
+    AppotaADTypeView = 0,
+    AppotaADTypeInterstitial = 1,
+    AppotaADTypeOfferWall = 2,
+    AppotaADTypeNone = 3,
 } AppotaADType;
 
 typedef void (^AppotaADStringBlock)(NSString *xmlString);
