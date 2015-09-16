@@ -24,7 +24,7 @@
 
 /// Called when an interstitial ad request completed without an interstitial to
 /// show. This is common since interstitials are shown sparingly to users.
-- (void)appotaOfferWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)appotaOfferWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *) error;
 
 #pragma mark Display-Time Lifecycle Notifications
 
