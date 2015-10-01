@@ -30,7 +30,7 @@
 
 /// Optional delegate object that receives state change notifications from this GADInterstitalAd.
 /// Remember to nil this property before deallocating the delegate.
-@property(nonatomic, weak) id<AppotaADInterstitialDelegate, AppotaADOfferWallDelegate> delegate;
+@property(nonatomic, weak) id delegate;
 
 #pragma mark Making an Ad Request
 
