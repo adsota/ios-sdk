@@ -1,6 +1,6 @@
-AppotaADSDK for iOS
+AdsOTASDK for iOS
 ====
-This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will be create and manage on [https://ads.appota.com](https://ads.appota.com)
+This is version 1.01 of AdsOTASDK for iOS. Every ads setting and ad unit will be create and manage on [https://ads.adsota.com](https://ads.adsota.com)
 
 ## Overview
 1. [Configuration](#1-configuration)
@@ -15,11 +15,11 @@ This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will 
 	- [Delegate](#42-delegate)
 	- [How user get reward](#43-how-user-get-reward)
 5. [Native ads](#5-native-ads)
- 	- [AppotaADNative class](#51-appotaadnative-class)
- 	- [AppotaADNativeObject class](#52-appotaadnativeobject-class)
+ 	- [AdsOTANative class](#51-AdsOTAnative-class)
+ 	- [AdsOTANativeObject class](#52-AdsOTAnativeobject-class)
 
 ## 1. Configuration
-- Add `AppotaADSDK.framework` and `AppotaADBundle.bundle` to your project
+- Add `AdsOTASDK.framework` and `AdsOTABundle.bundle` to your project
 - Add other frameworks that the SDK requires
 
 	- AdSupport
@@ -30,36 +30,36 @@ This is version 1.01 of AppotaADSDK for iOS. Every ads setting and ad unit will 
 	- CoreTelephony
 	- StoreKit
 	- SystemConfiguration
-- Configure project `.plist` add key `AppotaAPIKey` using key from developer page
+- Configure project `.plist` add key `adsotaAPIKey` using key from developer page
 - In `AppDelegate`:
-	- import SDK: `#import <AppotaADSDK/AppotaADSDK.h>`
+	- import SDK: `#import <AdsOTASDK/AdsOTASDK.h>`
 	- Init SDK in `application:didFinishLaunchingWithOptions:`
 	
 	```
-	[AppotaADSDK init];
+	[AdsOTASDK init];
 	```
 	
-- `AppotaADRequest` class has `isDevelopmentMode` property to config state of current application is in development (testing or production).
+- `AdsOTARequest` class has `isDevelopmentMode` property to config state of current application is in development (testing or production).
 
 ## 2. Banner
 Now that you have a project with the SDK referenced, let's put banner ads into it. There are 2 ways to add banner by interface builder or programmatically. 
-- Add `AppotaADBannerView` to interface builder and add constraint
+- Add `AdsOTABannerView` to interface builder and add constraint
 ![AD Constraint](adview_constraint.png)
-- Or init `AppotaADBannerView` and add to view programmatically
+- Or init `AdsOTABannerView` and add to view programmatically
 
 ```
-bannerView = [[AppotaADBannerView alloc] initWithAdSize:APPOTA_SMART_BANNER_SIZE origin:CGPointMake(0, 0)];
+bannerView = [[AdsOTABannerView alloc] initWithAdSize:adsota_SMART_BANNER_SIZE origin:CGPointMake(0, 0)];
 [self.view addSubview:bannerView];
 
 ```
-There are 2 options for banner size `APPOTA_BANNER_SIZE` which is fixed and `APPOTA_SMART_BANNER_SIZE` which is adaptively fit your side screen
+There are 2 options for banner size `adsota_BANNER_SIZE` which is fixed and `adsota_SMART_BANNER_SIZE` which is adaptively fit your side screen
 
 ### 2.1 Setup ad banner
-Use `adUnitID` from ad CMS to make ad request, pass any value `state` to send to Appota server to identify the ad. Set `rootViewControlelr` and `delegate` for ad banner
+Use `adUnitID` from ad CMS to make ad request, pass any value `state` to send to adsota server to identify the ad. Set `rootViewControlelr` and `delegate` for ad banner
 
 ```
     bannerView.adUnitID = @"YOUR_AD_UNIT";
-    AppotaADRequest *request = [AppotaADRequest request];
+    AdsOTARequest *request = [AdsOTARequest request];
     request.state = @"state";
     bannerView.delegate = self;
     bannerView.rootViewController = self;    
@@ -68,23 +68,23 @@ Use `adUnitID` from ad CMS to make ad request, pass any value `state` to send to
 ### 2.2 Delegate
 There are 2 delegate call :
 
-- `appotaAdViewDidReceiveAd:` called when delegate received ad and will display it
+- `adsotaOTAViewDidReceiveAd:` called when delegate received ad and will display it
 
 ```
-- (void) appotaAdViewDidReceiveAd:(AppotaADBannerView *)view;
+- (void) adsotaViewDidReceiveAd:(AdsOTABannerView *)view;
 
 ```
 
-- `appotaAdView:didFailToReceiveAdWithError:` called when fail to receive ad, print the error information to get the reason
+- `adsotaView:didFailToReceiveAdWithError:` called when fail to receive ad, print the error information to get the reason
 
 ```
-- (void) appotaAdView:(AppotaADBannerView *)view didFailToReceiveAdWithError:(AppotaADRequestError *)error
+- (void) adsotaView:(AdsOTABannerView *)view didFailToReceiveAdWithError:(AdsOTARequestError *)error
 ```
 
-- `appotaAdViewDidClick:` called when user did click on banner
+- `adsotaViewDidClick:` called when user did click on banner
 
 ```
-- (void) appotaAdViewDidClick:(AppotaADBannerView *)adView;
+- (void) adsotaViewDidClick:(AdsOTABannerView *)adView;
 ```
 
 ## 3. Interstitial Ad
@@ -93,7 +93,7 @@ Interstitial will display a full banner in your app.
 Call `initWithAdUnitID:` and set `delegate`, `rootViewController`
 
 ```
-interstitial = [[AppotaADInterstitial alloc] initWithAdUnitID:@"YOUR_AD_UNIT_ID"];
+interstitial = [[AdsOTAInterstitial alloc] initWithAdUnitID:@"YOUR_AD_UNIT_ID"];
 interstitial.delegate = self;
 interstitial.rootViewController = self;
     
@@ -102,7 +102,7 @@ interstitial.rootViewController = self;
 Then call `loadRequest:` when you want to display your interstitital ad
 
 ```
-AppotaADRequest *request = [AppotaADRequest request];
+AdsOTARequest *request = [AdsOTARequest request];
 request.state = @"YOUR_STATE";
 [interstitial loadRequest:request];    
 
@@ -114,7 +114,7 @@ request.state = @"YOUR_STATE";
 
 ```
 
-- (void)appotaInterstitialDidReceiveAd:(AppotaADInterstitial *)ad;
+- (void)adsotaInterstitialDidReceiveAd:(AdsOTAInterstitial *)ad;
 
 ```
 
@@ -122,7 +122,7 @@ request.state = @"YOUR_STATE";
 show, print the error for more information
 
 ```
-- (void)appotaInterstitial:(AppotaADInterstitial *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)adsotaInterstitial:(AdsOTAInterstitial *)ad didFailToReceiveAdWithError:(AdsOTARequestError *)error;
 
 ```
 
@@ -130,14 +130,14 @@ show, print the error for more information
 - Called when ad did click
 
 ```
-- (void)appotaInterstitialDidClick:(AppotaADInterstitial *)ad;
+- (void)adsotaInterstitialDidClick:(AdsOTAInterstitial *)ad;
 
 ```
 
 - Called just after dismissing an interstitial and it has animated off the screen.
 
 ```
-- (void)appotaInterstitialDidDismissScreen:(AppotaADInterstitial *)ad;
+- (void)adsotaInterstitialDidDismissScreen:(AdsOTAInterstitial *)ad;
 
 ```
 
@@ -148,7 +148,7 @@ Offerwill will display fullscreen ad with list of offer and reward
 Call `initWithAdUnitID:` and set `delegate`, `rootViewController`
 
 ```
-offerWall = [[AppotaADOfferWall alloc] initWithAdUnitID:@"YOUR_AD_UNIT_ID"];
+offerWall = [[AdsOTAOfferWall alloc] initWithAdUnitID:@"YOUR_AD_UNIT_ID"];
 offerWall.delegate = self;
 offerWall.rootViewController = self;
     
@@ -157,7 +157,7 @@ offerWall.rootViewController = self;
 Then call `loadRequest:` when you want to display your offerwall ad, pass `state` to your request, it'll be used to identify user and reward them after install ad by IPN
 
 ```
-AppotaADRequest *request = [AppotaADRequest request];
+AdsOTARequest *request = [AdsOTARequest request];
 request.state = @"YOUR_STATE";
 [offerWall loadRequest:request];    
 
@@ -168,7 +168,7 @@ request.state = @"YOUR_STATE";
 
 ```
 
-- (void)appotaOfferWallDidReceiveAd:(AppotaADOfferWall *)ad;
+- (void)adsotaOfferWallDidReceiveAd:(AdsOTAOfferWall *)ad;
 
 ```
 
@@ -176,7 +176,7 @@ request.state = @"YOUR_STATE";
 show, print the error for more information
 
 ```
-- (void)appotaOfferWall:(AppotaADOfferWall *)ad didFailToReceiveAdWithError:(AppotaADRequestError *)error;
+- (void)adsotaOfferWall:(AdsOTAOfferWall *)ad didFailToReceiveAdWithError:(AdsOTARequestError *)error;
 
 ```
 
@@ -184,14 +184,14 @@ show, print the error for more information
 - Called when ad did click
 
 ```
-- (void)appotaOfferWallDidClick:(AppotaADOfferWall *)ad;
+- (void)adsotaOfferWallDidClick:(AdsOTAOfferWall *)ad;
 
 ```
 
 - Called just after dismissing an offerwall and it has animated off the screen.
 
 ```
-- (void)appotaOfferWallDidDismissScreen:(AppotaADOfferWall *)ad;
+- (void)adsotaOfferWallDidDismissScreen:(AdsOTAOfferWall *)ad;
 
 ```
 ### 4.3 How user get reward
@@ -199,30 +199,30 @@ show, print the error for more information
 - Reward machenism will follow this char
 ![](ads_reward.png)
 
-Add your information which need to reward user (`userID`, game info, ...) to `state` and `target` property in `AppotaADRequest` object, this information will be passed to your server after user finish their quest in offerwall
+Add your information which need to reward user (`userID`, game info, ...) to `state` and `target` property in `AdsOTARequest` object, this information will be passed to your server after user finish their quest in offerwall
 
 ```
-AppotaADRequest *request = [AppotaADRequest request];
+AdsOTARequest *request = [AdsOTARequest request];
 request.state = @"game_1";
 request.target = @"user1";
 
 ```
 
-- Set your server address to reward user on [http://ads.appota.com](http://ads.appota.com). Here is a sample of simple server [IPN](ipn.php)
+- Set your server address to reward user on [http://ads.adsota.com](http://ads.adsota.com). Here is a sample of simple server [IPN](ipn.php)
 
 ## 5. Native ads
 Our SDK also support native ads. Native ADS api will return ads data and developer can use custom UI to display the data.
-### 5.1 AppotaADNative class
-- Call `loadRequest:withCompletionBlock:withErrorBlock:(AppotaADErrorBlock) errorBlock;
+### 5.1 AdsOTANative class
+- Call `loadRequest:withCompletionBlock:withErrorBlock:(AdsOTAErrorBlock) errorBlock;
 
 ```
-    AppotaADRequest *request = [AppotaADRequest request];
-    request.adType = AppotaADTypeInterstitial;
+    AdsOTARequest *request = [AdsOTARequest request];
+    request.adType = AdsOTATypeInterstitial;
     request.adUnitID = @"44";
-    [AppotaADNative loadRequest:request
+    [AdsOTANative loadRequest:request
             withCompletionBlock:^(NSArray *list) {
                 if (list.count > 0) {
-                    AppotaADNativeInterstitialObject *obj = list[0];
+                    AdsOTANativeInterstitialObject *obj = list[0];
                     NSLog(@"%@",[obj getImageURL]);
                 }
             } withErrorBlock:^(NSError *error) {
@@ -233,11 +233,11 @@ Our SDK also support native ads. Native ADS api will return ads data and develop
 
 - Set `adType`, `adUnitID` to `request`
 
-This function will return list of `AppotaADNativeObject` object
+This function will return list of `AdsOTANativeObject` object
 
 - Call `click:withRootViewController:` when user click on an item in your custom view
 
-### 5.2 AppotaADNativeObject class
+### 5.2 AdsOTANativeObject class
 - `ADNativeViewObject`, `ADNativeInterstitialObject`, `ADNativeOfferWallObject` 's inhertiged from `ADNativeObject` each will represent an adobject use to display on your custom UI ad
 
 - `ADNativeObject`
