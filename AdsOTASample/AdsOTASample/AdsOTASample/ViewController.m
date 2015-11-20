@@ -24,8 +24,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self setupBannerView];
     // Cannot show interstitial and offerwall all at once
-//    [self setupInterstitital];
-    [self setupOfferWall];
+    [self setupInterstitital];
+//    [self setupOfferWall];
 }
 
 - (void) setupBannerView {
@@ -41,7 +41,7 @@
 }
 
 - (void) setupInterstitital {
-    interstitial = [[AdsOTAInterstitial alloc] initWithAdUnitID:@"72" withRootViewController:self];
+    interstitial = [[AdsOTAInterstitial alloc] initWithAdUnitID:@"145" withRootViewController:self];
     interstitial.delegate = self;
     [interstitial loadRequest:[AdsOTARequest request]];
 }

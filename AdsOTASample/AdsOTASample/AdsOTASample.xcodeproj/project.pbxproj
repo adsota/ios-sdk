@@ -13,8 +13,8 @@
 		361B74E01BF487A400804070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361B74DE1BF487A400804070 /* Main.storyboard */; };
 		361B74E21BF487A400804070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 361B74E11BF487A400804070 /* Assets.xcassets */; };
 		361B74E51BF487A400804070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361B74E31BF487A400804070 /* LaunchScreen.storyboard */; };
-		361B74EE1BF487B200804070 /* AdsOTABundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 361B74EC1BF487B200804070 /* AdsOTABundle.bundle */; settings = {ASSET_TAGS = (); }; };
-		361B74EF1BF487B200804070 /* AdsOTASDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361B74ED1BF487B200804070 /* AdsOTASDK.framework */; settings = {ASSET_TAGS = (); }; };
+		361B74EE1BF487B200804070 /* AdsOTABundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 361B74EC1BF487B200804070 /* AdsOTABundle.bundle */; };
+		361B74EF1BF487B200804070 /* AdsOTASDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361B74ED1BF487B200804070 /* AdsOTASDK.framework */; };
 		361B74F11BF4892A00804070 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361B74F01BF4892A00804070 /* StoreKit.framework */; };
 		361B74F31BF4893200804070 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361B74F21BF4893200804070 /* AdSupport.framework */; };
 		361B74F51BF4893700804070 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361B74F41BF4893700804070 /* SystemConfiguration.framework */; };
@@ -332,6 +332,7 @@
 				361B74EB1BF487A400804070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
